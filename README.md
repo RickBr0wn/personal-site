@@ -1,5 +1,7 @@
 # rickbrown.co.uk
 
+![image info](public/screenshot-portfolio-website.png)
+
 Personal site for Rick Brown — developer and potter based in the South East of England.
 
 ## Stack
