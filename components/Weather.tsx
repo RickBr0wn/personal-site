@@ -7,15 +7,16 @@ interface WeatherData {
   description: string
   id: number
   city: string
+  isDay: boolean
 }
 
-function weatherEmoji(id: number): string {
-  if (id >= 200 && id < 300) return '⛈'
-  if (id >= 300 && id < 600) return '🌧'
-  if (id >= 600 && id < 700) return '🌨'
-  if (id >= 700 && id < 800) return '🌫'
-  if (id === 800) return '☀️'
-  if (id === 801) return '🌤'
+function weatherEmoji(id: number, isDay: boolean): string {
+  if (id >= 200 && id < 300) return '⛈️'
+  if (id >= 300 && id < 600) return '🌧️'
+  if (id >= 600 && id < 700) return '🌨️'
+  if (id >= 700 && id < 800) return '🌫️'
+  if (id === 800) return isDay ? '☀️' : '🌙'
+  if (id === 801) return isDay ? '🌤️' : '🌙'
   if (id === 802) return '⛅'
   return '☁️'
 }
@@ -44,7 +45,7 @@ export default function Weather() {
 
   return (
     <p className="mt-10 text-sm text-zinc-600">
-      {weatherEmoji(weather.id)} {weather.temp}°c · {weather.city}
+      {weatherEmoji(weather.id, weather.isDay)} {weather.temp}°c · {weather.city}
     </p>
   )
 }

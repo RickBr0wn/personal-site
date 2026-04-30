@@ -19,11 +19,13 @@ export async function GET(request: NextRequest) {
   }
 
   const data = await res.json()
+  const isDay = data.dt > data.sys.sunrise && data.dt < data.sys.sunset
 
   return NextResponse.json({
     temp: Math.round(data.main.temp),
     description: data.weather[0].description,
     id: data.weather[0].id,
     city: data.name,
+    isDay,
   })
 }
