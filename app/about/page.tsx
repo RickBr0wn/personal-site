@@ -17,6 +17,8 @@ export default function AboutPage() {
         <p>
           I&apos;ve been teaching myself to code for several years. I work mostly with
           TypeScript, React, and Next.js, and I build things because I genuinely enjoy it.
+          I&apos;m also learning Unity — I&apos;ve been a gamer my whole life and making
+          my own games feels like a natural next step.
         </p>
         <p>
           Pottery came later, and it&apos;s become something I love in equal measure.

@@ -5,14 +5,20 @@ export const metadata = {
 
 const skills = [
   'TypeScript', 'React', 'Next.js', 'Node.js',
-  'PostgreSQL', 'MongoDB', 'HTML', 'CSS',
+  'PostgreSQL', 'MongoDB', 'HTML', 'CSS', 'Unity', 'C#',
 ]
 
 const projects = [
   {
+    title: 'Dino Endless Runner',
+    description: 'An endless runner built in Unity 6. My first complete game.',
+    href: 'https://rickbr0wn.itch.io/dinoendlessrunner',
+    year: '2025',
+  },
+  {
     title: 'This site',
     description: 'Personal portfolio built with Next.js 15, Tailwind CSS, and TypeScript.',
-    href: 'https://github.com/RickBr0wn/portfolio',
+    href: 'https://github.com/RickBr0wn/portfolio-website-2023',
     year: '2025',
   },
 ]
