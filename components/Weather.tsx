@@ -45,7 +45,7 @@ export default function Weather() {
 
   return (
     <p className="mt-10 flex items-center gap-2 text-sm text-zinc-600">
-      <span className="grayscale opacity-75">{weatherEmoji(weather.id, weather.isDay)}</span>
+      <span className="grayscale opacity-50">{weatherEmoji(weather.id, weather.isDay)}</span>
       <span>{weather.temp}°c · {weather.city}</span>
     </p>
   )
