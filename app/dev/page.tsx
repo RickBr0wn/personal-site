@@ -18,7 +18,7 @@ const projects = [
   {
     title: 'This site',
     description: 'Personal portfolio built with Next.js 15, Tailwind CSS, and TypeScript.',
-    href: 'https://github.com/RickBr0wn/portfolio-website-2023',
+    href: 'https://github.com/RickBr0wn/portfolio',
     year: '2025',
   },
 ]
