@@ -40,7 +40,7 @@ export default function PotteryGallery({ pieces }: Props) {
           <button
             key={i}
             onClick={() => setSelected(i)}
-            className="relative aspect-square overflow-hidden rounded-lg bg-zinc-100 group"
+            className="relative aspect-square overflow-hidden rounded-lg bg-zinc-800 group"
           >
             <Image
               src={piece.src}

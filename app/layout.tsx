@@ -19,8 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="max-w-4xl mx-auto px-6 py-16">
           {children}
         </main>
-        <footer className="max-w-4xl mx-auto px-6 py-8 border-t border-zinc-200 mt-8">
-          <p className="text-sm text-zinc-400">© {new Date().getFullYear()} Rick Brown</p>
+        <footer className="max-w-4xl mx-auto px-6 py-8 border-t border-zinc-800 mt-8">
+          <p className="text-sm text-zinc-600">© {new Date().getFullYear()} Rick Brown</p>
         </footer>
       </body>
     </html>

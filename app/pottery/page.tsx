@@ -10,8 +10,8 @@ export default function PotteryPage() {
   return (
     <>
       <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-4">Pottery</h1>
-        <p className="text-lg text-zinc-600 max-w-xl leading-relaxed">
+        <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">Pottery</h1>
+        <p className="text-lg text-zinc-400 max-w-xl leading-relaxed">
           I started making pottery a couple of years ago and it quickly became something
           I love. There&apos;s something grounding about working with clay.
         </p>

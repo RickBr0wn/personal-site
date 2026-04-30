@@ -21,22 +21,22 @@ export default function DevPage() {
   return (
     <>
       <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-4">Dev</h1>
-        <p className="text-lg text-zinc-600 max-w-xl leading-relaxed">
+        <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">Dev</h1>
+        <p className="text-lg text-zinc-400 max-w-xl leading-relaxed">
           I&apos;ve been learning to code for several years. Self-taught, and I love it.
           I mostly work with the TypeScript and React ecosystem.
         </p>
       </div>
 
       <section className="mb-12">
-        <h2 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-4">
+        <h2 className="text-xs font-semibold text-zinc-600 uppercase tracking-widest mb-4">
           Stack
         </h2>
         <div className="flex flex-wrap gap-2">
           {skills.map(skill => (
             <span
               key={skill}
-              className="px-3 py-1 bg-zinc-100 text-zinc-700 rounded-full text-sm"
+              className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full text-sm"
             >
               {skill}
             </span>
@@ -45,7 +45,7 @@ export default function DevPage() {
       </section>
 
       <section>
-        <h2 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-4">
+        <h2 className="text-xs font-semibold text-zinc-600 uppercase tracking-widest mb-4">
           Projects
         </h2>
         <div className="space-y-6">
@@ -56,13 +56,13 @@ export default function DevPage() {
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-zinc-900 hover:text-zinc-500 transition-colors"
+                  className="font-medium text-zinc-100 hover:text-zinc-400 transition-colors"
                 >
                   {project.title} ↗
                 </a>
-                <span className="text-sm text-zinc-400 ml-4 shrink-0">{project.year}</span>
+                <span className="text-sm text-zinc-600 ml-4 shrink-0">{project.year}</span>
               </div>
-              <p className="text-zinc-600 text-sm leading-relaxed">{project.description}</p>
+              <p className="text-zinc-400 text-sm leading-relaxed">{project.description}</p>
             </div>
           ))}
         </div>
