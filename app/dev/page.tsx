@@ -28,6 +28,12 @@ const projects = [
     year: '2025',
   },
   {
+    title: 'weather-api',
+    description: 'Node.js + Express + TypeScript REST API for current weather and air quality data, powered by OpenWeatherMap. Deployed on Vercel.',
+    href: 'https://weather-api-rickbrown.vercel.app',
+    year: '2024',
+  },
+  {
     title: 'shadcn-template',
     description: 'Next.js 16 + shadcn/ui + Tailwind CSS v4 starter template with dark mode, App Router, and React 19.',
     href: 'https://github.com/RickBr0wn/shadcn-template',
