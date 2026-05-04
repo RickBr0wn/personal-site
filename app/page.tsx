@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Weather from '@/components/Weather'
 
 export default function Home() {
   return (
@@ -26,7 +25,6 @@ export default function Home() {
             Pottery
           </Link>
         </div>
-        <Weather />
       </div>
     </div>
   )
