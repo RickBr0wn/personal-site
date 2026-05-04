@@ -1,6 +1,6 @@
 # rickbrown.co.uk
 
-![image info](public/screenshot-portfolio-website.png)
+![Portfolio screenshot](public/screenshot-portfolio-website.png)
 
 Personal site for Rick Brown — developer and potter based in the South East of England.
 
@@ -10,6 +10,13 @@ Personal site for Rick Brown — developer and potter based in the South East of
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [OpenWeather API](https://openweathermap.org/api) — geolocation weather widget
+
+## Pages
+
+- `/` — Home
+- `/dev` — Development projects and skills
+- `/pottery` — Pottery gallery
+- `/about` — About
 
 ## Running locally
 
@@ -24,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Create a `.env.local` file in the root:
 
-```
+```env
 OPENWEATHER_API_KEY=your_key_here
 ```
 
@@ -37,3 +44,7 @@ Drop images into `public/pottery/` and update `data/pottery.ts` with the filenam
 ## Deployment
 
 Deployed on [Vercel](https://vercel.com). Add `OPENWEATHER_API_KEY` to your Vercel project environment variables.
+
+## License
+
+MIT — see [LICENSE.md](LICENSE.md).

@@ -16,10 +16,40 @@ const projects = [
     year: '2025',
   },
   {
+    title: 'Recipe Finder',
+    description: 'Full-stack recipe app. Search millions of dishes, save favourites, build shopping lists, and plan your week with a drag-and-drop meal planner. Built with Next.js, Auth.js, Prisma, and Spoonacular.',
+    href: 'https://recipe-finder-rickbrown.vercel.app',
+    year: '2025',
+  },
+  {
     title: 'This site',
     description: 'Personal portfolio built with Next.js 15, Tailwind CSS, and TypeScript.',
     href: 'https://github.com/RickBr0wn/portfolio',
     year: '2025',
+  },
+  {
+    title: 'shadcn-template',
+    description: 'Next.js 16 + shadcn/ui + Tailwind CSS v4 starter template with dark mode, App Router, and React 19.',
+    href: 'https://github.com/RickBr0wn/shadcn-template',
+    year: '2024',
+  },
+  {
+    title: 'secure-gen',
+    description: 'Cryptographically secure password and passphrase generator with strength scoring, breach checking, and batch generation. Built with Next.js 16 and React 19.',
+    href: 'https://secure-gen-three.vercel.app',
+    year: '2024',
+  },
+  {
+    title: 'vite-github-pages-template',
+    description: 'Minimal Vite 6 + React 19 + TypeScript 5 template with automatic CI/CD deployment to GitHub Pages via GitHub Actions.',
+    href: 'https://rickbr0wn.github.io/vite-github-pages-template/',
+    year: '2023',
+  },
+  {
+    title: 'friendly-words-api',
+    description: 'Netlify Functions v2 serverless API that returns random friendly word pairs — perfect for generating readable file names, usernames, or project identifiers.',
+    href: 'https://friendly-words-api.netlify.app',
+    year: '2022',
   },
 ]
 
