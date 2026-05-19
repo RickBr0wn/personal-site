@@ -9,7 +9,7 @@ export default function Home() {
         </h1>
         <p className="text-xl text-zinc-400 leading-relaxed mb-10">
           I&apos;m a self-taught developer based in the South East of England.
-          I build web apps, iOS apps, and games — not for work, just because I love it.
+          I build web apps, iOS apps, and games. Not for work, just because I love it.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link

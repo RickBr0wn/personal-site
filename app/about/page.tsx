@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'About — Rick Brown',
+  title: 'About | Rick Brown',
 }
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <div className="max-w-xl space-y-6 text-zinc-400 text-lg leading-relaxed">
         <p>
           I&apos;m Rick Brown, based in the South East of England. I&apos;m self-taught,
-          and I&apos;ve been writing code for several years — not for work, just because
+          and I&apos;ve been writing code for several years. Not for work, just because
           I love it.
         </p>
         <p>

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Dev — Rick Brown',
+  title: 'Dev | Rick Brown',
   description: 'Development work and projects by Rick Brown.',
 }
 
@@ -22,7 +22,7 @@ const groups = [
       },
       {
         title: 'slightlyoffcenter.ceramics',
-        description: 'Website for Slightly Off Centre Ceramics — wheel thrown stoneware, Kent based.',
+        description: 'Website for Slightly Off Centre Ceramics. Wheel thrown stoneware, Kent based.',
         href: 'https://github.com/RickBr0wn/slightlyoffcenter.ceramics',
         year: '2026',
       },
@@ -69,7 +69,7 @@ const groups = [
       },
       {
         title: 'friendly-words-api',
-        description: 'Netlify Functions v2 serverless API that returns random friendly word pairs — perfect for generating readable file names, usernames, or project identifiers.',
+        description: 'Netlify Functions v2 serverless API that returns random friendly word pairs, perfect for generating readable file names, usernames, or project identifiers.',
         href: 'https://friendly-words-api.netlify.app',
         github: 'https://github.com/RickBr0wn/friendly-words-api',
         year: '2022',
@@ -98,7 +98,7 @@ const groups = [
       },
       {
         title: 'smart-rockets',
-        description: 'Genetic algorithm simulation in p5.js — rockets evolve over generations to navigate obstacles and reach their target.',
+        description: 'Genetic algorithm simulation in p5.js. Rockets evolve over generations to navigate obstacles and reach their target.',
         href: 'https://rickbr0wn.github.io/smart-rockets/',
         github: 'https://github.com/RickBr0wn/smart-rockets',
         year: '2018',
@@ -120,7 +120,7 @@ export default function DevPage() {
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">Dev</h1>
         <p className="text-lg text-zinc-400 max-w-xl leading-relaxed">
-          I&apos;m self-taught, and a few years in. I work across three areas — web apps
+          I&apos;m self-taught, and a few years in. I work across three areas: web apps
           with TypeScript and React, iOS apps with Swift and SwiftUI, and games with
           Unity 6. I build things because I love it, not because it&apos;s my job.
         </p>
