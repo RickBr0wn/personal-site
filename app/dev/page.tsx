@@ -194,9 +194,14 @@ export default function DevPage() {
             </p>
             <div className="space-y-3">
               <div className="flex items-baseline gap-3">
-                <span className="text-sm text-zinc-100">
-                  Fix implicit HTML decoding bug in nselib/url; add html_encode and html_decode
-                </span>
+                <a
+                  href="https://github.com/nmap/nmap/issues/3324"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-zinc-100 hover:text-zinc-400 transition-colors"
+                >
+                  Fix implicit HTML decoding bug in nselib/url; add html_encode and html_decode ↗
+                </a>
                 <span className="text-xs text-zinc-600 shrink-0">pending review</span>
               </div>
             </div>
