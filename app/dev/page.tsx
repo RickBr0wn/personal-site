@@ -141,6 +141,48 @@ export default function DevPage() {
         </div>
       </section>
 
+      <section className="mb-12">
+        <h2 className="text-xs font-semibold text-zinc-600 uppercase tracking-widest mb-4">
+          Open Source
+        </h2>
+        <div className="space-y-6">
+          <div>
+            <p className="text-sm text-zinc-500 mb-2">
+              <a
+                href="https://github.com/processing/p5.js-web-editor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-zinc-100 transition-colors"
+              >
+                p5.js Web Editor
+              </a>
+            </p>
+            <div className="space-y-3">
+              <div>
+                <a
+                  href="https://github.com/processing/p5.js-web-editor/pull/1146"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-zinc-100 hover:text-zinc-400 transition-colors"
+                >
+                  Add ability to toggle line numbers in accessibility settings ↗
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://github.com/processing/p5.js-web-editor/pull/1147"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-zinc-100 hover:text-zinc-400 transition-colors"
+                >
+                  Add toast notification when creating a new file ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="space-y-12">
         {groups.map(group => (
           <section key={group.label}>
