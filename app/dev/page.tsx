@@ -120,8 +120,9 @@ export default function DevPage() {
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">Dev</h1>
         <p className="text-lg text-zinc-400 max-w-xl leading-relaxed">
-          I&apos;ve been learning to code for several years. Self-taught, and I love it.
-          I mostly work with the TypeScript and React ecosystem.
+          I&apos;m self-taught, and a few years in. I work across three areas — web apps
+          with TypeScript and React, iOS apps with Swift and SwiftUI, and games with
+          Unity 6. I build things because I love it, not because it&apos;s my job.
         </p>
       </div>
 
