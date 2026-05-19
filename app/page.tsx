@@ -8,8 +8,8 @@ export default function Home() {
           Hi, I&apos;m Rick.
         </h1>
         <p className="text-xl text-zinc-400 leading-relaxed mb-10">
-          I&apos;m a developer and potter based in the South East of England.
-          I code because I love it, and I make things with clay for the same reason.
+          I&apos;m a developer based in the South East of England.
+          I code because I love it.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
@@ -17,12 +17,6 @@ export default function Home() {
             className="px-6 py-3 bg-zinc-100 text-zinc-900 rounded-lg text-sm font-medium hover:bg-white transition-colors"
           >
             Dev work
-          </Link>
-          <Link
-            href="/pottery"
-            className="px-6 py-3 border border-zinc-700 text-zinc-300 rounded-lg text-sm font-medium hover:border-zinc-400 hover:text-zinc-100 transition-colors"
-          >
-            Pottery
           </Link>
         </div>
       </div>

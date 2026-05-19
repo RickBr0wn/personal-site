@@ -11,19 +11,13 @@ export default function AboutPage() {
 
       <div className="max-w-xl space-y-6 text-zinc-400 text-lg leading-relaxed">
         <p>
-          I&apos;m Rick Brown, based in the South East of England. I spend my time
-          writing code and making things with clay — not necessarily in that order.
+          I&apos;m Rick Brown, based in the South East of England.
         </p>
         <p>
           I&apos;ve been teaching myself to code for several years. I work mostly with
           TypeScript, React, and Next.js, and I build things because I genuinely enjoy it.
           I&apos;m also learning Unity — I&apos;ve been a gamer my whole life and making
           my own games feels like a natural next step.
-        </p>
-        <p>
-          Pottery came later, and it&apos;s become something I love in equal measure.
-          There&apos;s something satisfying about making a physical object from nothing —
-          something about putting your hands in clay and seeing what emerges.
         </p>
       </div>
 
