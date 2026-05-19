@@ -8,8 +8,8 @@ export default function Home() {
           Hi, I&apos;m Rick.
         </h1>
         <p className="text-xl text-zinc-400 leading-relaxed mb-10">
-          I&apos;m a developer based in the South East of England.
-          I code because I love it.
+          I&apos;m a self-taught developer based in the South East of England.
+          I build web apps, iOS apps, and games — not for work, just because I love it.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
@@ -18,6 +18,14 @@ export default function Home() {
           >
             Dev work
           </Link>
+          <a
+            href="https://github.com/RickBr0wn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 border border-zinc-700 text-zinc-300 rounded-lg text-sm font-medium hover:border-zinc-400 hover:text-zinc-100 transition-colors"
+          >
+            GitHub
+          </a>
         </div>
       </div>
     </div>
