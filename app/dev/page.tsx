@@ -6,7 +6,7 @@ export const metadata = {
 const skills = [
   'TypeScript', 'React', 'Next.js', 'Node.js',
   'PostgreSQL', 'MongoDB', 'HTML', 'CSS', 'Unity', 'C#',
-  'Swift', 'SwiftUI',
+  'Swift', 'SwiftUI', 'AppKit',
 ]
 
 const groups = [
