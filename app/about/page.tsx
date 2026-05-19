@@ -11,13 +11,14 @@ export default function AboutPage() {
 
       <div className="max-w-xl space-y-6 text-zinc-400 text-lg leading-relaxed">
         <p>
-          I&apos;m Rick Brown, based in the South East of England.
+          I&apos;m Rick Brown, based in the South East of England. I&apos;m self-taught,
+          and I&apos;ve been writing code for several years — not for work, just because
+          I love it.
         </p>
         <p>
-          I&apos;ve been teaching myself to code for several years. I work mostly with
-          TypeScript, React, and Next.js, and I build things because I genuinely enjoy it.
-          I&apos;m also learning Unity — I&apos;ve been a gamer my whole life and making
-          my own games feels like a natural next step.
+          I work mostly with TypeScript, React, and Next.js. I&apos;m also building iOS
+          apps with Swift and SwiftUI, and making games in Unity 6. I&apos;ve been a
+          gamer my whole life, so building my own games feels like the natural next step.
         </p>
       </div>
 
