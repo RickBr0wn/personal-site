@@ -10,6 +10,24 @@ const skills = [
 
 const projects = [
   {
+    title: 'claynote',
+    description: 'iOS app for tracking pottery pieces through the making process, from first throw to final glaze. Built with Swift.',
+    href: 'https://github.com/RickBr0wn/claynote',
+    year: '2026',
+  },
+  {
+    title: 'slightlyoffcenter.ceramics',
+    description: 'Website for Slightly Off Centre Ceramics — wheel thrown stoneware, Kent based.',
+    href: 'https://github.com/RickBr0wn/slightlyoffcenter.ceramics',
+    year: '2026',
+  },
+  {
+    title: 'leafy-living',
+    description: 'Website for Leafy Living, a small UK brand about plants, handmade pots, and simple ways to make your home greener. Built with TypeScript.',
+    href: 'http://leafy-living.com',
+    year: '2026',
+  },
+  {
     title: 'Dino Endless Runner',
     description: 'An endless runner built in Unity 6. My first complete game.',
     href: 'https://rickbr0wn.itch.io/dinoendlessrunner',
@@ -56,6 +74,18 @@ const projects = [
     description: 'Netlify Functions v2 serverless API that returns random friendly word pairs — perfect for generating readable file names, usernames, or project identifiers.',
     href: 'https://friendly-words-api.netlify.app',
     year: '2022',
+  },
+  {
+    title: 'smart-rockets',
+    description: 'Genetic algorithm simulation in p5.js — rockets evolve over generations to navigate obstacles and reach their target.',
+    href: 'https://rickbr0wn.github.io/smart-rockets/',
+    year: '2018',
+  },
+  {
+    title: 'game-of-life',
+    description: "Conway's Game of Life built with p5.js.",
+    href: 'https://rickbr0wn.github.io/game-of-life/',
+    year: '2018',
   },
 ]
 
