@@ -36,6 +36,7 @@ export default function WorldCanvas() {
   const speechQueue = useRef<string[]>(shuffled)
   const speechIndex = useRef(0)
   const speechTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isBubbleActive = useRef(false)
 
   const handleFloorClick = (point: THREE.Vector3) => {
     walkTarget.current = new THREE.Vector3(point.x, 0, point.z)
@@ -50,14 +51,18 @@ export default function WorldCanvas() {
   }, [])
 
   const handleSpeechTrigger = useCallback(() => {
+    if (isBubbleActive.current) return
     if (speechIndex.current >= speechQueue.current.length) {
       speechQueue.current = [...SPEECH_LINES].sort(() => Math.random() - 0.5)
       speechIndex.current = 0
     }
     const line = speechQueue.current[speechIndex.current++]
+    isBubbleActive.current = true
     setActiveSpeechLine(line)
-    if (speechTimeout.current) clearTimeout(speechTimeout.current)
-    speechTimeout.current = setTimeout(() => setActiveSpeechLine(null), 4000)
+    speechTimeout.current = setTimeout(() => {
+      setActiveSpeechLine(null)
+      isBubbleActive.current = false
+    }, 4000)
   }, [])
 
   return (
