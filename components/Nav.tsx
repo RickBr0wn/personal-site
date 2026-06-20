@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useWorldMode } from '@/context/WorldModeContext'
 
 const links = [
   { href: '/dev', label: 'Dev' },
@@ -10,6 +11,9 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname()
+  const { is3D } = useWorldMode()
+
+  if (is3D) return null
 
   return (
     <header className="sticky top-0 z-40 bg-zinc-950/80 backdrop-blur-sm border-b border-zinc-800">
