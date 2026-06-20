@@ -12,6 +12,11 @@ import ProjectNode from './ProjectNode'
 import SpeechNode from './SpeechNode'
 import SpeechBubble from './SpeechBubble'
 import { WORLD_NODES, SPEECH_NODES, SPEECH_LINES } from './worldConfig'
+import Trees from './Trees'
+import Rocks from './Rocks'
+import Clouds from './Clouds'
+import Fence from './Fence'
+import Hills from './Hills'
 
 useGLTF.preload('/character.glb')
 
@@ -73,7 +78,12 @@ export default function WorldCanvas() {
           shadow-camera-top={15}
           shadow-camera-bottom={-15}
         />
+        <Hills />
         <Floor onFloorClick={handleFloorClick} />
+        <Fence />
+        <Trees />
+        <Rocks />
+        <Clouds />
         <Suspense fallback={null}>
           <Character characterRef={characterRef} walkTarget={walkTarget} />
         </Suspense>

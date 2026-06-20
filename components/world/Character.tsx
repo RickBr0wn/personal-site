@@ -6,9 +6,11 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 import * as THREE from 'three'
 import type { Group } from 'three'
 import { usePlayerControls } from './usePlayerControls'
+import { FENCE_HALF } from './Fence'
 
 const WALK_SPEED = 4
 const ROTATION_SPEED = 10
+const BOUNDARY = FENCE_HALF - 0.4
 
 interface CharacterProps {
   characterRef: React.RefObject<Group | null>
@@ -70,6 +72,8 @@ export default function Character({ characterRef, walkTarget }: CharacterProps) 
       char.quaternion.slerp(_targetQuat, ROTATION_SPEED * delta)
 
       char.position.addScaledVector(_direction, WALK_SPEED * delta)
+      char.position.x = Math.max(-BOUNDARY, Math.min(BOUNDARY, char.position.x))
+      char.position.z = Math.max(-BOUNDARY, Math.min(BOUNDARY, char.position.z))
     }
 
     // Crossfade animations
