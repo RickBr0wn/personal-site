@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import * as THREE from 'three'
@@ -19,22 +19,30 @@ interface CharacterProps {
 
 const _direction = new THREE.Vector3()
 const _targetQuat = new THREE.Quaternion()
+const _UP = new THREE.Vector3(0, 1, 0)
+const _toTarget = new THREE.Vector3()
 
 export default function Character({ characterRef, walkTarget }: CharacterProps) {
   const { scene, animations } = useGLTF('/character.glb')
-  const { actions } = useAnimations(animations, characterRef)
+
+  const strippedAnimations = useMemo(() =>
+    animations.map(clip => {
+      const cloned = clip.clone()
+      cloned.tracks = cloned.tracks.filter(
+        track => !(track.name.toLowerCase().includes('hips') && track.name.endsWith('.position'))
+      )
+      return cloned
+    }),
+    [animations]
+  )
+
+  const { actions } = useAnimations(strippedAnimations, characterRef)
   const isWalking = useRef(false)
   const controls = usePlayerControls()
 
   useEffect(() => {
-    // Strip root motion from hips bone so animation doesn't fight our movement code
-    animations.forEach(clip => {
-      clip.tracks = clip.tracks.filter(track =>
-        !(track.name.toLowerCase().includes('hips') && track.name.endsWith('.position'))
-      )
-    })
     if (actions.idle) actions.idle.reset().fadeIn(0.3).play()
-  }, [actions, animations])
+  }, [actions])
 
   useFrame((_, delta) => {
     if (!characterRef.current) return
@@ -42,7 +50,6 @@ export default function Character({ characterRef, walkTarget }: CharacterProps) 
 
     _direction.set(0, 0, 0)
 
-    // WASD: world-space directions so Timmy can walk toward or away from camera
     if (controls.forward) _direction.z -= 1
     if (controls.back) _direction.z += 1
     if (controls.left) _direction.x -= 1
@@ -50,12 +57,11 @@ export default function Character({ characterRef, walkTarget }: CharacterProps) 
 
     const hasKeyInput = _direction.lengthSq() > 0
 
-    // Click-to-walk when no key held
     if (!hasKeyInput && walkTarget.current) {
-      const toTarget = walkTarget.current.clone().sub(char.position)
-      toTarget.y = 0
-      if (toTarget.length() > 0.4) {
-        _direction.copy(toTarget).normalize()
+      _toTarget.copy(walkTarget.current).sub(char.position)
+      _toTarget.y = 0
+      if (_toTarget.length() > 0.4) {
+        _direction.copy(_toTarget).normalize()
       } else {
         walkTarget.current = null
       }
@@ -66,9 +72,8 @@ export default function Character({ characterRef, walkTarget }: CharacterProps) 
     if (moving) {
       _direction.normalize()
 
-      // Timmy's natural forward is +Z, so angle uses atan2(x, z) not atan2(x, -z)
       const angle = Math.atan2(_direction.x, _direction.z)
-      _targetQuat.setFromAxisAngle(new THREE.Vector3(0, 1, 0), angle)
+      _targetQuat.setFromAxisAngle(_UP, angle)
       char.quaternion.slerp(_targetQuat, ROTATION_SPEED * delta)
 
       char.position.addScaledVector(_direction, WALK_SPEED * delta)
@@ -80,7 +85,6 @@ export default function Character({ characterRef, walkTarget }: CharacterProps) 
       }
     }
 
-    // Crossfade animations
     if (moving !== isWalking.current) {
       isWalking.current = moving
       if (moving) {
