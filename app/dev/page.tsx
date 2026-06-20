@@ -14,6 +14,20 @@ const groups = [
     label: 'Web',
     projects: [
       {
+        title: 'hackshell.io',
+        description: 'Managed Kali Linux boxes for HTB and CTF players. Browser terminal plus SSH via Tailscale, no local setup required.',
+        href: 'https://hackshell-psi.vercel.app/',
+        github: 'https://github.com/RickBr0wn/hackshell.io',
+        year: '2026',
+      },
+      {
+        title: 'horse-racing',
+        description: 'Multiplayer horse racing party game. Players bet fake money on simulated races controlled by a host.',
+        href: 'https://horse-racing-five.vercel.app',
+        github: 'https://github.com/RickBr0wn/horse-racing',
+        year: '2026',
+      },
+      {
         title: 'leafy-living',
         description: 'Website for Leafy Living, a small UK brand about plants, handmade pots, and simple ways to make your home greener. Built with TypeScript.',
         href: 'http://leafy-living.com',
@@ -80,9 +94,26 @@ const groups = [
     label: 'iOS',
     projects: [
       {
+        title: 'nurchi',
+        description: 'Raise a virtual pet. Keep it fed, keep it happy, try not to let it die. Built with Swift and SwiftUI.',
+        href: 'https://github.com/RickBr0wn/nurchi',
+        year: '2026',
+      },
+      {
         title: 'claynote',
         description: 'iOS app for tracking pottery pieces through the making process, from first throw to final glaze. Built with Swift.',
         href: 'https://github.com/RickBr0wn/claynote',
+        year: '2026',
+      },
+    ],
+  },
+  {
+    label: 'macOS',
+    projects: [
+      {
+        title: 'caffeine',
+        description: 'Menu bar app that keeps your display awake. Toggle on/off, set a countdown timer, and integrates with Siri and Shortcuts.',
+        href: 'https://github.com/RickBr0wn/caffeine',
         year: '2026',
       },
     ],
