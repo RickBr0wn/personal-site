@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState, useCallback, Suspense } from 'react'
+import { useRef, useState, useCallback, useEffect, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Preload, KeyboardControls, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
@@ -44,6 +44,10 @@ export default function WorldCanvas() {
   const handleWalkTo = (pos: THREE.Vector3) => {
     walkTarget.current = pos
   }
+
+  useEffect(() => {
+    return () => { if (speechTimeout.current) clearTimeout(speechTimeout.current) }
+  }, [])
 
   const handleSpeechTrigger = useCallback(() => {
     if (speechIndex.current >= speechQueue.current.length) {

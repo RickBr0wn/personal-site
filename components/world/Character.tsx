@@ -74,6 +74,10 @@ export default function Character({ characterRef, walkTarget }: CharacterProps) 
       char.position.addScaledVector(_direction, WALK_SPEED * delta)
       char.position.x = Math.max(-BOUNDARY, Math.min(BOUNDARY, char.position.x))
       char.position.z = Math.max(-BOUNDARY, Math.min(BOUNDARY, char.position.z))
+      if (walkTarget.current) {
+        walkTarget.current.x = Math.max(-BOUNDARY, Math.min(BOUNDARY, walkTarget.current.x))
+        walkTarget.current.z = Math.max(-BOUNDARY, Math.min(BOUNDARY, walkTarget.current.z))
+      }
     }
 
     // Crossfade animations
