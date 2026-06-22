@@ -1,8 +1,9 @@
 import { useRef, useState, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
+import { Html } from '@react-three/drei'
 import type { ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
-import type { Mesh, Group } from 'three'
+import type { Group } from 'three'
 import type { ProjectNodeData } from './worldConfig'
 import { PROXIMITY_RADIUS } from './worldConfig'
 import ProjectPanel from './ProjectPanel'
@@ -14,7 +15,6 @@ interface ProjectNodeProps {
 }
 
 export default function ProjectNode({ node, characterRef, onWalkTo }: ProjectNodeProps) {
-  const meshRef = useRef<Mesh>(null)
   const wasNear = useRef(false)
   const [isNear, setIsNear] = useState(false)
   const nodePos = useMemo(() => new THREE.Vector3(...node.position), [node.position])
@@ -25,11 +25,7 @@ export default function ProjectNode({ node, characterRef, onWalkTo }: ProjectNod
     return map
   }, [])
 
-  useFrame(({ clock }) => {
-    if (meshRef.current) {
-      meshRef.current.position.y = 1.5 + Math.sin(clock.elapsedTime * 1.5 + nodePos.x) * 0.15
-    }
-
+  useFrame(() => {
     if (!characterRef.current) return
     const dist = characterRef.current.position.distanceTo(nodePos)
     const near = dist < PROXIMITY_RADIUS
@@ -45,11 +41,28 @@ export default function ProjectNode({ node, characterRef, onWalkTo }: ProjectNod
   }
 
   return (
-    <group position={node.position}>
-      <mesh ref={meshRef} onClick={handleClick} castShadow>
-        <octahedronGeometry args={[0.5, 0]} />
-        <meshToonMaterial color={node.color} gradientMap={gradientMap} emissive={node.color} emissiveIntensity={0.3} />
+    <group position={node.position} onClick={handleClick}>
+      <mesh position={[0, 1, 0]} castShadow>
+        <cylinderGeometry args={[0.06, 0.08, 2, 8]} />
+        <meshToonMaterial color="#7a5c2e" gradientMap={gradientMap} />
       </mesh>
+      <mesh position={[0, 2.3, 0]} castShadow>
+        <boxGeometry args={[1.4, 0.5, 0.1]} />
+        <meshToonMaterial color={node.color} gradientMap={gradientMap} />
+      </mesh>
+      <Html position={[0, 2.3, 0.06]} center transform zIndexRange={[10, 0]}>
+        <div style={{
+          fontSize: '14px',
+          color: 'white',
+          fontWeight: 'bold',
+          whiteSpace: 'nowrap',
+          pointerEvents: 'none',
+          textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+          userSelect: 'none',
+        }}>
+          {node.label}
+        </div>
+      </Html>
       {isNear && <ProjectPanel node={node} />}
     </group>
   )
