@@ -75,10 +75,11 @@ export default function WorldCanvas() {
       >
         <color attach="background" args={['#c8dce8']} />
         <fog attach="fog" args={['#d4e4f0', 15, 40]} />
-        <ambientLight intensity={0.9} color="#fff8f0" />
+        <ambientLight intensity={0.4} color="#fff8f0" />
+        <hemisphereLight args={['#cfe3f0', '#4a5a3c', 0.5]} />
         <directionalLight
           position={[3, 8, 5]}
-          intensity={0.6}
+          intensity={1.2}
           castShadow
           shadow-mapSize={[1024, 1024]}
           shadow-camera-far={50}

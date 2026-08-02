@@ -32,12 +32,5 @@ export default function SpeechNode({ node, characterRef, onTrigger }: SpeechNode
     wasNear.current = near
   })
 
-  if (process.env.NODE_ENV !== 'development') return null
-
-  return (
-    <mesh position={node.position}>
-      <sphereGeometry args={[node.radius, 12, 8]} />
-      <meshBasicMaterial color="#ff69b4" wireframe opacity={0.4} transparent />
-    </mesh>
-  )
+  return null
 }
