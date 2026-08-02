@@ -22,6 +22,12 @@ const _targetQuat = new THREE.Quaternion()
 const _UP = new THREE.Vector3(0, 1, 0)
 const _toTarget = new THREE.Vector3()
 
+const gradientMap = (() => {
+  const map = new THREE.DataTexture(new Uint8Array([60, 160]), 2, 1)
+  map.needsUpdate = true
+  return map
+})()
+
 export default function Character({ characterRef, walkTarget }: CharacterProps) {
   const { scene, animations } = useGLTF('/character.glb')
 
@@ -43,6 +49,23 @@ export default function Character({ characterRef, walkTarget }: CharacterProps) 
   useEffect(() => {
     if (actions.idle) actions.idle.reset().fadeIn(0.3).play()
   }, [actions])
+
+  // Match the flat toon-shaded environment instead of Mixamo's default PBR look.
+  useEffect(() => {
+    scene.traverse(child => {
+      if (!(child instanceof THREE.Mesh)) return
+      const current = child.material as THREE.MeshStandardMaterial
+      if (!(current instanceof THREE.MeshToonMaterial)) {
+        child.material = new THREE.MeshToonMaterial({
+          color: current.color ?? new THREE.Color('#ffffff'),
+          map: current.map ?? null,
+          gradientMap,
+        })
+      }
+      child.castShadow = true
+      child.receiveShadow = true
+    })
+  }, [scene])
 
   useFrame((_, delta) => {
     if (!characterRef.current) return
