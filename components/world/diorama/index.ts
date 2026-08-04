@@ -3,6 +3,13 @@ import type * as THREE from 'three'
 import type { Group } from 'three'
 import type { ProjectNodeData } from '../worldConfig'
 import GithubCabin from './GithubCabin'
+import HackerOutpost from './HackerOutpost'
+import Stable from './Stable'
+import Greenhouse from './Greenhouse'
+import PetPen from './PetPen'
+import PotteryStudio from './PotteryStudio'
+import CoffeeCart from './CoffeeCart'
+import WorkshopShed from './WorkshopShed'
 
 export interface DioramaComponentProps {
   node: ProjectNodeData
@@ -12,4 +19,11 @@ export interface DioramaComponentProps {
 
 export const DIORAMAS: Record<string, ComponentType<DioramaComponentProps>> = {
   github: GithubCabin,
+  hackshell: HackerOutpost,
+  'horse-racing': Stable,
+  'leafy-living': Greenhouse,
+  nurchi: PetPen,
+  claynote: PotteryStudio,
+  caffeine: CoffeeCart,
+  'open-source': WorkshopShed,
 }

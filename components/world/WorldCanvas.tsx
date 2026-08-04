@@ -8,7 +8,6 @@ import type { Group } from 'three'
 import Floor from './Floor'
 import Character from './Character'
 import CameraRig from './CameraRig'
-import ProjectNode from './ProjectNode'
 import SpeechNode from './SpeechNode'
 import SpeechBubble from './SpeechBubble'
 import { WORLD_NODES, SPEECH_NODES, SPEECH_LINES } from './worldConfig'
@@ -104,7 +103,7 @@ export default function WorldCanvas() {
         </Suspense>
         <CameraRig characterRef={characterRef} />
         {WORLD_NODES.map(node => {
-          const Diorama = DIORAMAS[node.id] ?? ProjectNode
+          const Diorama = DIORAMAS[node.id]
           return (
             <Diorama
               key={node.id}
