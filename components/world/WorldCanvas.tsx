@@ -17,6 +17,8 @@ import Rocks from './Rocks'
 import Clouds from './Clouds'
 import Fence from './Fence'
 import Hills from './Hills'
+import Landmark from './Landmark'
+import Path from './Path'
 
 useGLTF.preload('/character.glb')
 
@@ -69,12 +71,12 @@ export default function WorldCanvas() {
     <KeyboardControls map={keyMap}>
       <Canvas
         shadows
-        camera={{ fov: 60, near: 0.1, far: 100, position: [0, 5, 10] }}
+        camera={{ fov: 60, near: 0.1, far: 150, position: [0, 5, 10] }}
         gl={{ antialias: true }}
         style={{ width: '100%', height: '100%' }}
       >
         <color attach="background" args={['#c8dce8']} />
-        <fog attach="fog" args={['#d4e4f0', 15, 40]} />
+        <fog attach="fog" args={['#d4e4f0', 24, 70]} />
         <ambientLight intensity={0.4} color="#fff8f0" />
         <hemisphereLight args={['#cfe3f0', '#4a5a3c', 0.5]} />
         <directionalLight
@@ -82,18 +84,20 @@ export default function WorldCanvas() {
           intensity={1.2}
           castShadow
           shadow-mapSize={[1024, 1024]}
-          shadow-camera-far={50}
-          shadow-camera-left={-15}
-          shadow-camera-right={15}
-          shadow-camera-top={15}
-          shadow-camera-bottom={-15}
+          shadow-camera-far={60}
+          shadow-camera-left={-22}
+          shadow-camera-right={22}
+          shadow-camera-top={22}
+          shadow-camera-bottom={-22}
         />
         <Hills />
         <Floor onFloorClick={handleFloorClick} />
+        <Path />
         <Fence />
         <Trees />
         <Rocks />
         <Clouds />
+        <Landmark />
         <Suspense fallback={null}>
           <Character characterRef={characterRef} walkTarget={walkTarget} />
         </Suspense>
