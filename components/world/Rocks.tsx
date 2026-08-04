@@ -1,20 +1,14 @@
-import * as THREE from 'three'
+import { toonGradientMap as gradientMap } from '@/lib/world/toonGradient'
 
 function rand(seed: number) {
   return (((Math.sin(seed * 127.1 + 311.7) * 43758.5453) % 1) + 1) % 1
 }
 
-const gradientMap = (() => {
-  const map = new THREE.DataTexture(new Uint8Array([60, 160]), 2, 1)
-  map.needsUpdate = true
-  return map
-})()
-
 const ROCK_COLORS = ['#8a7e6e', '#7a7060', '#9a8e7e', '#6e6458']
 
-const ROCKS = Array.from({ length: 14 }, (_, i) => {
+const ROCKS = Array.from({ length: 24 }, (_, i) => {
   const angle = rand(i * 17 + 1) * Math.PI * 2
-  const radius = 4 + rand(i * 19 + 3) * 6
+  const radius = 8 + rand(i * 19 + 3) * 12
   const scale: [number, number, number] = [
     0.18 + rand(i * 23) * 0.42,
     0.14 + rand(i * 29) * 0.3,

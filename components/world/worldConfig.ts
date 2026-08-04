@@ -19,7 +19,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
     oneliner: 'Browser terminal for HTB and CTF players. SSH via Tailscale, no local setup.',
     live: 'https://hackshell-psi.vercel.app/',
     github: 'https://github.com/RickBr0wn/hackshell.io',
-    position: [8, 0, 0],
+    position: [17, 0, -5],
     color: '#4f7ba3',
   },
   {
@@ -28,7 +28,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
     oneliner: 'Multiplayer horse racing party game. Bet fake money, pick your horse.',
     live: 'https://horse-racing-five.vercel.app',
     github: 'https://github.com/RickBr0wn/horse-racing',
-    position: [5, 0, 6],
+    position: [9.5, 0, 6.5],
     color: '#c9853a',
   },
   {
@@ -37,7 +37,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
     oneliner: 'A UK brand about plants, handmade pots, and making your home greener.',
     live: 'http://leafy-living.com',
     github: 'https://github.com/RickBr0wn/leafy-living',
-    position: [-5, 0, 6],
+    position: [-12.5, 0, -12],
     color: '#5a8a4a',
   },
   {
@@ -46,7 +46,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
     oneliner: 'Raise a virtual pet. Keep it fed, keep it happy, try not to let it die.',
     live: 'https://github.com/RickBr0wn/nurchi',
     github: 'https://github.com/RickBr0wn/nurchi',
-    position: [5, 0, -7],
+    position: [10.5, 0, -14],
     color: '#b06080',
   },
   {
@@ -55,7 +55,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
     oneliner: 'Tracking pottery pieces from first touch to final glaze.',
     live: 'https://github.com/RickBr0wn/claynote',
     github: 'https://github.com/RickBr0wn/claynote',
-    position: [-5, 0, -7],
+    position: [-9.5, 0, 15],
     color: '#b05a3a',
   },
   {
@@ -64,7 +64,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
     oneliner: 'Keeps your Mac display awake. Menu bar toggle, timer, Siri support.',
     live: 'https://github.com/RickBr0wn/caffeine',
     github: 'https://github.com/RickBr0wn/caffeine',
-    position: [-8, 0, 0],
+    position: [-11, 0, 3],
     color: '#5a7a9a',
   },
   {
@@ -73,7 +73,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
     oneliner: 'The rest of the work lives here.',
     live: 'https://github.com/RickBr0wn',
     github: 'https://github.com/RickBr0wn',
-    position: [0, 0, -9],
+    position: [1, 0, -11.5],
     color: '#8a8070',
   },
   {
@@ -82,7 +82,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
     oneliner: 'Merged PRs to p5.js Web Editor. Nmap fix pending review.',
     live: 'https://github.com/processing/p5.js-web-editor/pulls?q=author%3ARickBr0wn',
     github: 'https://github.com/nmap/nmap/issues/3324',
-    position: [0, 0, 8],
+    position: [2, 0, 10.8],
     color: '#7a5a9a',
     liveLabel: 'p5.js',
     githubLabel: 'Nmap',

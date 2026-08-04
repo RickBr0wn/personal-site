@@ -1,22 +1,17 @@
-import { useMemo } from 'react'
-import * as THREE from 'three'
+import { toonGradientMap as gradientMap } from '@/lib/world/toonGradient'
 
 function rand(seed: number) {
   return (((Math.sin(seed * 127.1 + 311.7) * 43758.5453) % 1) + 1) % 1
 }
 
-const gradientMap = (() => {
-  const map = new THREE.DataTexture(new Uint8Array([80, 200]), 2, 1)
-  map.needsUpdate = true
-  return map
-})()
-
 const CANOPY_COLORS = ['#4a7a35', '#3d6b2a', '#527a3a', '#456e30']
 const TRUNK_COLOR = '#6b4423'
 
-const TREES = Array.from({ length: 22 }, (_, i) => {
-  const angle = (i / 22) * Math.PI * 2 + rand(i * 3) * 0.5
-  const radius = 11 + rand(i * 7) * 9
+const TREE_COUNT = 44
+
+const TREES = Array.from({ length: TREE_COUNT }, (_, i) => {
+  const angle = (i / TREE_COUNT) * Math.PI * 2 + rand(i * 3) * 0.5
+  const radius = 22 + rand(i * 7) * 14
   const scale = 0.75 + rand(i * 11) * 0.7
   const rotY = rand(i * 13) * Math.PI * 2
   const color = CANOPY_COLORS[i % CANOPY_COLORS.length]

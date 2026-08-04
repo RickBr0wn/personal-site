@@ -7,6 +7,7 @@ import type { Group } from 'three'
 import type { ProjectNodeData } from './worldConfig'
 import { PROXIMITY_RADIUS } from './worldConfig'
 import ProjectPanel from './ProjectPanel'
+import { toonGradientMap as gradientMap } from '@/lib/world/toonGradient'
 
 interface ProjectNodeProps {
   node: ProjectNodeData
@@ -18,12 +19,6 @@ export default function ProjectNode({ node, characterRef, onWalkTo }: ProjectNod
   const wasNear = useRef(false)
   const [isNear, setIsNear] = useState(false)
   const nodePos = useMemo(() => new THREE.Vector3(...node.position), [node.position])
-
-  const gradientMap = useMemo(() => {
-    const map = new THREE.DataTexture(new Uint8Array([80, 200]), 2, 1)
-    map.needsUpdate = true
-    return map
-  }, [])
 
   useFrame(() => {
     if (!characterRef.current) return

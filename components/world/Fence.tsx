@@ -1,14 +1,8 @@
-import * as THREE from 'three'
-
-const gradientMap = (() => {
-  const map = new THREE.DataTexture(new Uint8Array([70, 160]), 2, 1)
-  map.needsUpdate = true
-  return map
-})()
+import { toonGradientMap as gradientMap } from '@/lib/world/toonGradient'
 
 const POST_COLOR = '#8b6340'
 const RAIL_COLOR = '#a07848'
-export const FENCE_HALF = 10
+export const FENCE_HALF = 20
 
 const POST_SPACING = 2
 const POST_HEIGHT = 1.1
