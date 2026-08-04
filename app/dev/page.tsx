@@ -46,7 +46,7 @@ const groups = [
         year: '2026',
       },
       {
-        title: 'claynote',
+        title: 'Thrown',
         description: 'iOS app for tracking pottery pieces through the making process, from first throw to final glaze. Built with Swift.',
         href: 'https://github.com/RickBr0wn/claynote',
         year: '2026',
