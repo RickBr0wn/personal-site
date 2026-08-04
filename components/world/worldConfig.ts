@@ -51,7 +51,7 @@ export const WORLD_NODES: ProjectNodeData[] = [
   },
   {
     id: 'claynote',
-    label: 'claynote',
+    label: 'Thrown',
     oneliner: 'Tracking pottery pieces from first touch to final glaze.',
     live: 'https://github.com/RickBr0wn/claynote',
     github: 'https://github.com/RickBr0wn/claynote',
