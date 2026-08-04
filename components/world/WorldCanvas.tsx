@@ -19,6 +19,7 @@ import Fence from './Fence'
 import Hills from './Hills'
 import Landmark from './Landmark'
 import Path from './Path'
+import { DIORAMAS } from './diorama'
 
 useGLTF.preload('/character.glb')
 
@@ -102,14 +103,17 @@ export default function WorldCanvas() {
           <Character characterRef={characterRef} walkTarget={walkTarget} />
         </Suspense>
         <CameraRig characterRef={characterRef} />
-        {WORLD_NODES.map(node => (
-          <ProjectNode
-            key={node.id}
-            node={node}
-            characterRef={characterRef}
-            onWalkTo={handleWalkTo}
-          />
-        ))}
+        {WORLD_NODES.map(node => {
+          const Diorama = DIORAMAS[node.id] ?? ProjectNode
+          return (
+            <Diorama
+              key={node.id}
+              node={node}
+              characterRef={characterRef}
+              onWalkTo={handleWalkTo}
+            />
+          )
+        })}
         {SPEECH_NODES.map(node => (
           <SpeechNode
             key={node.id}
